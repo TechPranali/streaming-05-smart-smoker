@@ -33,7 +33,7 @@ def process_data():
                     queue_name = f"0{index}-smoker" if index == 1 else f"0{index}-food-A" if index == 2 else f"0{index}-food-B"
                     encoded_message = struct.pack('!df', time_stamp, float(temp))
                     send_data_to_queue("localhost", queue_name, encoded_message)
-            time.sleep(30)
+            time.sleep(0.1)
 
 if __name__ == "__main__":
     process_data()
