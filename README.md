@@ -28,8 +28,8 @@ Access the console at [RabbitMQ Admin](http://localhost:15672/).
 3. Ensure your environment has `pika` installed, or you can reuse the library from an earlier module by copying the relevant files.
 
 ### Code Overview:
-2. **Function `send_data_to_queue`**: Encodes and sends temperature data to the designated RabbitMQ queue. 
-3. **Function `process_data`**: Iterates through 'smoker-temps.csv', skips the header, and processes each row. It converts time and temperature readings into binary messages, which are then dispatched to the appropriate queue based on the data's channel.
+2. **Emiter Script Function `push_to_queue`**: Establishes a connection to RabbitMQ and sends the encoded temperature data to the designated RabbitMQ queue. It ensures that the queue is declared as durable.queue. 
+3. **Emiter Script Function Function `process_csv_and_send`**: Reads the temperature data from 'smoker-temps.csv' every 30 seconds. It skips the header row and processes each subsequent row. It converts the time and temperature readings into binary messages and sends them to the appropriate RabbitMQ queue based on the channel (smoker, food A, or food B).
 
 ### Screenshots:
 Here are visual representations of our system in action:
