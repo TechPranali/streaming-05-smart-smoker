@@ -38,4 +38,4 @@ Access the console at [RabbitMQ Admin](http://localhost:15672/).
 ### Screenshots:
 Here are visual representations of our system in action:
 
-![Detailed View of Queue Management](image.png)
+![Window Queue with Alerts](image-1.png)
